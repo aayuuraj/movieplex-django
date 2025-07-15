@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-8kr^+l1=x6s9klrc(jz5ak2#os&48qtd+(xk1+tu$od^u4z7m!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['movieplex-django.onrender.com', '127.0.0.1', 'localhost']
+
 
 
 # Application definition
