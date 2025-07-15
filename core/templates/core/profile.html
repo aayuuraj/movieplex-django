@@ -1,9 +1,0 @@
-{% extends 'core/base.html' %}
-{% block content %}
-<h2>{{ user.username }}'s Liked Movies</h2>
-<ul>
-  {% for movie in liked_movies %}
-    <li><a href="{% url 'movie_detail' movie.pk %}">{{ movie.title }}</a></li>
-  {% endfor %}
-</ul>
-{% endblock %}
