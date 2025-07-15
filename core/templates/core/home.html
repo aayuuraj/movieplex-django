@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<h1>All Movies</h1>
+<div style="background-color: #222; color: #fff; padding: 30px; border-radius: 10px; margin: 20px;">
+  <h2 style="text-align: center;">Go ahead, stream free</h2>
+  <p style="text-align: center; font-size: 18px;">
+    With Plex you can watch over 20,000 free movies and shows, plus Live TV on almost any device.
+    <br>What are you waiting for?
+  </p>
+  <div style="text-align: center;">
+    <a href="{% url 'register' %}" style="background-color: #ffcc00; padding: 10px 20px; font-weight: bold; color: black; text-decoration: none; border-radius: 5px;">
+      Sign Up
+    </a>
+  </div>
+</div>
+
+<div class="movie-grid">
+  {% for movie in movies %}
+    <div class="movie-card">
+      <img src="{{ movie.poster }}" alt="{{ movie.title }}">
+      <div class="overlay">
+        <h2>{{ movie.title }}</h2>
+        <p>{{ movie.genre }}</p>
+        <p>IMDb: {{ movie.imdb_rating }}</p>
+        <a href="{% url 'movie_detail' movie.pk %}">Details</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
